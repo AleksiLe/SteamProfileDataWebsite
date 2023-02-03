@@ -1,0 +1,63 @@
+@import'config';
+
+    body {
+        background-color: $primary-color;
+        background-size: cover;
+        padding: 4rem;
+
+    }
+    .top-box {
+        margin: 0.5px;
+        align-items: center;
+        text-align: center;
+        .steam-id-field {
+            margin: 1rem;
+            .input-field {
+                width: 350px;
+            }
+            label {
+                font-size: 1.5rem;
+            }
+        }
+        .alert{
+            font-size: 1.5rem;
+        }
+
+    }
+    .bottom-box {
+        border: 1px solid set-text-color($primary-color);
+        border-top: 0.5px solid set-text-color($primary-color);
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        .boxes {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 0.5rem 1.5rem;
+            font-size: 1.5rem;
+            div {
+                align-items: center;
+            }
+            /*
+            @include easeOut;
+            &:hover {
+                background: $secondary-color;
+                color: set-text-color($secondary-color);
+                span {
+                    color: set-text-color($secondary-color);
+                }
+            } */
+
+            p {
+                margin: 0rem;
+            }
+        }
+    }   
+
+
+
+
+
+
+@import'mobile'; //Enhance's responsivity

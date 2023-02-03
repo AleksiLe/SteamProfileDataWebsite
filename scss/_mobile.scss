@@ -1,0 +1,68 @@
+//Very Widescreen
+@include mediaXxl{    
+    .bottom-box {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+//Widescreen
+@include mediaXl {
+
+}
+//Desktop and Laptops
+@include mediaLg {
+
+}
+// Tablets & Small Laptops
+@include mediaMd {
+    body {
+        background-color: $primary-color;
+        background-size: cover;
+        padding: 2rem;
+
+    }
+    .top-box {
+    
+        .steam-id-field {
+            margin: 1rem;
+            text-align: center;
+            
+            .input-field {
+                width: 250px;
+            }
+            label {
+                font-size: 1.5rem;
+            }
+        }
+
+    }
+    .bottom-box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+//SmartPhones
+@include mediaSm {
+    body {
+        background-color: $primary-color;
+        background-size: cover;
+        padding: 1.5rem;
+
+    }
+    .top-box {
+        .steam-id-field {
+            margin: 1rem;
+            text-align: center;
+            
+            .input-field {
+                width: 150px;
+            }
+            label {
+                font-size: 1.5rem;
+            }
+        }
+
+    }
+    .bottom-box {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

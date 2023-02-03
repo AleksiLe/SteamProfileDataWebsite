@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Welcome to my portfolio</title>
+</head>
+<body>
+    <div class="top-box">    
+        <form class="steam-id-field" method="post">
+            <label for="fname">Steam Link:</label><br>
+            <input type="text" id="steam-id" name="steam-id" class="input-field"><br>
+            <input type="submit" value="Submit">
+        </form>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert" role="alert">
+                {{ message }}
+            </div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
+    <div class="bottom-box">
+        {% if steamdata %}
+            {% for data in steamdata %}
+                <div class="boxes">
+                    <button type="button" id="close-btn" class="close" onClick="deleteNote({{ data.id }})">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div>
+                        Profile Name: 
+                        {{ data.customId }}
+                    </div>
+                    <div>
+                        <p class="picture-header">Profile Picture:</p>
+                        <img src="{{ data.avatarURL }}" alt="ProfilePic" style="width:auto;">
+                    </div>
+                    <div>
+                        Location: 
+                        {{ data.location }}
+                    </div>
+                    <div>
+                        Vac Bans: 
+                        {{ data.vacBans }}
+                    </div>
+                    <div>
+                        Profile State: 
+                        {{ data.onlineState }}
+                    </div>
+                    <div>
+                        Trade Ban State: 
+                        {{ data.tradeBanState }}
+                    </div>
+                    <div>
+                        Member Since:
+                        {{ data.memberSince }}
+                    </div>
+                    <div>
+                        Id: 
+                        {{ data.id64 }}
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <script src="{{ url_for('static',filename='js/main.js') }}"></script>
+</body>
+</html>
