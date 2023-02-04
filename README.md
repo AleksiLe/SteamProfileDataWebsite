@@ -2,7 +2,7 @@
 
 ## Python extensions and running the project
 
-Flask and SQLAlchemy were used on this project. You will be able to start the server by You can install them with pip using the following command.
+Flask and SQLAlchemy were used on this project. You can install them with pip using the following command.
 ```
 $ pip install -U Flask-SQLAlchemy
 ```
