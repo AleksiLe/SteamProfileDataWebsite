@@ -10,7 +10,7 @@ After that, you can run the main file which starts the server.
 ```
 $ python3 main.py
 ```
-You see from the command line which addresses the server started and by going to that address from a browser you can access the webpage.
+You see from the command line in which addresses the server started and by going to that address from a browser you can access the webpage.
 ## Future
 
 Perhaps login for users to study that area or get more data from steam's API. The visual presentation needs upgrade at least.
