@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, flash, jsonify
-from .api import API
+from .steamXMLparser import PROFILE
 from .models import SteamData
 from . import dp
 import json
@@ -19,7 +19,7 @@ def home():
             flash("Your steam id is too long.", category="error")
         else:
             try:
-                account = API(steam_id)
+                account = PROFILE(steam_id)
                 data = SteamData.query.filter_by(id64 = account.getSteamId64()).first()
             except ValueError:
                 flash("Your url was unknown type.", category="error")
