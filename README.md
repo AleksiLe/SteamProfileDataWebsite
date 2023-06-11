@@ -9,6 +9,8 @@ $ pip install -U Flask-SQLAlchemy
 After that, you can run the main file which starts the server.
 ```
 $ python3 main.py
+$ python.exe main.py
+
 ```
 You see from the command line in which addresses the server started and by going to that address from a browser you can access the webpage.
 ## Future
